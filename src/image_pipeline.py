@@ -79,8 +79,7 @@ for i in tqdm(range(0, len(image_paths), BATCH_SIZE)):
         all_records.append(rec)
         all_embeds.append(embeds[j])
         embed_index += 1
-
-# SAVE OUTPUT
+#SAVE  OUTPUT
 os.makedirs(EMB_DIR, exist_ok=True)
 np.save(IMAGE_EMB_NPY, np.array(all_embeds, dtype=np.float32))
 with open(IMAGE_META_JSON, "w") as f:
